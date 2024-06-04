@@ -7,7 +7,8 @@ function Hospital(name, doctors, patients) {
     this.addPatients = function addPatients (id,name) {
         return this.patients[`patient_${id}`] = {
             name,
-            diseases : {}
+            diseases : {},
+            doctors: {}
         }
     };
 
@@ -49,7 +50,7 @@ function Hospital(name, doctors, patients) {
 
     //assign doctor to patient  ??
     this.assignDoctorToPatient = function assignDoctorToPatient(patient_id, doctor_id) {
-        return this.patients[`patient_${patient_id}`] = this.doctors[`doctor${doctor_id}`]
+        return this.patients[`patient_${patient_id}`].doctors[`doctor_${doctor_id}`] = this.doctors[`doctor${doctor_id}`]
     };
 
     //get the doctor of specific patient ??
